@@ -43,15 +43,23 @@ const Slide = styled.div`
     height: 100vh;
     align-items: center;
     justify-content: center;
+    background-color: #${props => props.bg};
 `
 
 const ImageContainer = styled.div`
     flex: 1;
     height: 100%;
+    margin: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 
 const Image = styled.img`
-    height: 70%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    align-items: center;
 `
 
 const InfoContainer = styled.div`
@@ -94,9 +102,9 @@ const Slider = () => {
             </Arrow>
             <Wrapper slideIndex={slideIndex}>
                 { sliderItems.map(item => 
-                    <Slide>
+                    <Slide bg={ item.color } key={ item.id }>
                         <ImageContainer>
-                            <Image src={ item.img }/>
+                            <Image bg={ item.color } src={ item.img }/>
                         </ImageContainer>
                         <InfoContainer>
                             <Title>{ item.title }</Title>
