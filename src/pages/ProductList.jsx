@@ -3,7 +3,8 @@ import Navbar from '../components/Navbar'
 import Announcement from '../components/Announcement'
 import { Products } from '../components/Products'
 import { Newsletter } from '../components/Newsletter'
-import { Footer } from '../components/Footer'
+import Footer from '../components/Footer';
+import { mobile } from "../responsive"
 
 const Container = styled.div``;
 
@@ -18,6 +19,7 @@ const FilterContainer = styled.div`
 
 const Filter = styled.div`
     margin: 20px;
+    ${mobile({ margin: '0px 20px', display: 'flex', flexDirection: 'column' })}
 `;
 
 const FilterText = styled.span`
@@ -29,6 +31,7 @@ const FilterText = styled.span`
 const Select = styled.select`
     padding: 10px;
     margin-right: 20px;
+    ${mobile({ margin: '10px 0px' })}
 `;
 
 const Option = styled.option``;
